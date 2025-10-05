@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express, { Application, Request, Response } from 'express'
 import { productRoutes } from './app/modules/student/product.route'
+import { orderRoutes } from './app/modules/orders/order.route'
 const app: Application = express()
 
 // parsers
@@ -9,6 +10,7 @@ app.use(cors())
 
 // application routes
 app.use('/api/v1/products', productRoutes)
+app.use('/api/v1/orders', orderRoutes)
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!')
